@@ -1,0 +1,40 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Walk the Dog",
+      "description": "I must walk the dog around the house",
+      "state": "todo"
+    },
+    {
+      "id": 2,
+      "title": "Clean the dishes",
+      "description": "They are really dirty It will take some time",
+      "state": "todo"
+    },
+    {
+      "id": 3,
+      "title": "Fix the pipe",
+      "description": "The pipe is leaking under the sink",
+      "state": "todo"
+    },
+    {
+      "id": 4,
+      "title": "Go for a run",
+      "description": "Gee this will be much nicer than writing some React App",
+      "state": "inprogress"
+    },
+    {
+      "id": 5,
+      "title": "Make the bed",
+      "description": "Nothing like a good, clean bed.",
+      "state": "done"
+    },
+    {
+      "id": 6,
+      "title": "Make the app",
+      "description": "Create app for Parklio",
+      "state": "todo"
+    }
+  ]
+}
