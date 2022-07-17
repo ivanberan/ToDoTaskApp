@@ -13,15 +13,30 @@ function App(props) {
   const [db, setDb] = useState([]);
   const [modalOpen, setModalOpen] = useState(false);
 
+  const LoadData = async() =>{
+    try{
+      const url = "http://localhost:3000/tasks";
+      const res = await fetch(url);
+      console.log(res.ok);
+      const data = await res.json()
+      sort2(data)
+      return data;
+
+    }catch (err){
+      console.log(err)
+    }
+  }
   useEffect(() => {
-    fetch('http://localhost:3000/tasks')
+    /*fetch('http://localhost:3000/tasks')
       .then(response => response.json())
-      .then(data => setDb(data));
+      .then(data => setDb(data));*/
+      LoadData()
+
+   
   }, []);
 
-  const sort2 = () => {
-    console.log(db)
-    console.log()
+  const sort2 = (db) => {
+    /*console.log(db)*/
     for (var i = 0; i < db.length; i++) {
       switch (db[i].state) {
         case 'todo':
@@ -40,7 +55,7 @@ function App(props) {
   return (
     <div >
       <ToDoHeader />
-      <button onClick={sort2} className="todo-header">Load data</button>
+      {/*<button onClick={LoadData} className="todo-header">Load data</button>*/}
       <div className='rows'>
         <Todolist todoList={todoList} setTodoList={setTodoList} setModalOpen={setModalOpen} inProgressList={inProgressList} setinProgressList={setinProgressList} title={"To do Tasks"} />
         <InProgresslist todoList={todoList} setTodoList={setTodoList} inProgressList={inProgressList} setinProgressList={setinProgressList} doneList={doneList} setDoneList={setDoneList} />
